@@ -1,0 +1,543 @@
+  [1m[36m (39.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (47.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20130722075908)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130722075908"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-22 16:02:26 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.0.0/lib/rails/templates/rails/welcome/index.html.erb (15.0ms)
+Completed 200 OK in 175ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:02:32 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1181ms (Views: 1178.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:02:33 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-07-22 16:02:35 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (94.0ms)
+  Rendered users/new.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 136ms (Views: 135.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-07-22 16:02:41 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "user"=>{"name"=>"aaaa", "email"=>"bbbb"}, "commit"=>"Create User"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (85.0ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 22 Jul 2013 08:02:41 UTC +00:00], ["email", "bbbb"], ["name", "aaaa"], ["updated_at", Mon, 22 Jul 2013 08:02:41 UTC +00:00]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 97ms (ActiveRecord: 89.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2013-07-22 16:02:41 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-07-22 16:03:27 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:03:27 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:03:27 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:03:27 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2013-07-22 16:03:33 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "user"=>{"name"=>"vvvvv", "email"=>"vvvv"}, "commit"=>"Create User"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 22 Jul 2013 08:03:33 UTC +00:00], ["email", "vvvv"], ["name", "vvvvv"], ["updated_at", Mon, 22 Jul 2013 08:03:33 UTC +00:00]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 10ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2013-07-22 16:03:33 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:03:33 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:03:33 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:03:33 +0800
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:03:37 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:27 +0800
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 10ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:29 +0800
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:15:31 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20130722082035)
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130722082035"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:21:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 412ms (Views: 370.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:26 +0800
+
+
+Started GET "/micropost" for 127.0.0.1 at 2013-07-22 16:21:46 +0800
+
+ActionController::RoutingError (No route matches [GET] "/micropost"):
+  actionpack (4.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `block in call'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.0) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.0) lib/rails/rack/logger.rb:21:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.0) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.0.0) lib/rails/engine.rb:511:in `call'
+  railties (4.0.0) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (85.0ms)
+
+
+Started GET "/microposts" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+Processing by MicropostsController#index as HTML
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:21:50 +0800
+
+
+Started GET "/microposts/new" for 127.0.0.1 at 2013-07-22 16:21:52 +0800
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (49.0ms)
+  Rendered microposts/new.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:03 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-07-22 16:22:04 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (18.0ms)
+  Rendered users/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "user"=>{"name"=>"ccccc", "email"=>"qqqqqq"}, "commit"=>"Create User"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.0ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 22 Jul 2013 08:22:08 UTC +00:00], ["email", "qqqqqq"], ["name", "ccccc"], ["updated_at", Mon, 22 Jul 2013 08:22:08 UTC +00:00]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/users/3
+Completed 302 Found in 20ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:08 +0800
+
+
+Started GET "/microposts" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+Processing by MicropostsController#index as HTML
+  [1m[36mMicropost Load (0.0ms)[0m  [1mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:12 +0800
+
+
+Started GET "/microposts/new" for 127.0.0.1 at 2013-07-22 16:22:13 +0800
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (2.0ms)
+  Rendered microposts/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hiKdQ5G1KhcnVEWvjNQRsdN1nTplY+yjlsvkGVmXjFo=", "micropost"=>{"content"=>"11111", "user_id"=>"3"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "microposts" ("content", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["content", "11111"], ["created_at", Mon, 22 Jul 2013 08:22:23 UTC +00:00], ["updated_at", Mon, 22 Jul 2013 08:22:23 UTC +00:00], ["user_id", 3]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/microposts/1
+Completed 302 Found in 15ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/microposts/1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (1.0ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered microposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-22 16:22:23 +0800
